@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desafios Interativos</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <style>
+    body {
+            background-image: url('lv_0_20250604185829.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #fff; }
+     header, main {
+            max-width: 960px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+        nav {
+            background-image: url('Captura de tela 2025-05-14 120922.png');
+            background-size: cover;
+            background-position: center;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            ;
+            margin-left: 180px;
+            margin-right: 180px;}
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ffd700;
+        }
+    .questao {
+      margin-bottom: 20px;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffffdd;
+      border-radius: 10px;
+      color: #000;
+    }
+    .resultado {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Desafios</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="material.html">Material</a></li>
+      <li><a href="desafios.html">Desafios</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Responda as perguntas e veja sua pontuação!</h2>
+    <form id="quizForm">
+      <!-- Questão 1 -->
+      <div class="questao">
+        <p><strong>1. Como o código deveria continuar para que o valor seja mostrado?</strong></p>
+        <div class="codigo">
+x ← 10<br>
+y ← 5<br>
+z ← x + y<br>
+        </div>
+        <label><input type="radio" name="q1" value="a" /> Escreval (x+y)    </label><br />
+        <label><input type="radio" name="q1" value="b" /> Escreval (z)      </label><br />
+        <label><input type="radio" name="q1" value="c" /> Leia (x+y)        </label><br />
+        <label><input type="radio" name="q1" value="d" /> Leia (z)          </label>
+      </div>
+
+      <!-- Questão 2 -->
+      <div class="questao">
+        <p><strong>2. Qual valor será exibido?</strong></p>
+        <div class="codigo">
+x ← 7 <br>
+y ← 2 * x <br>
+se (x > y) então escreval("Maior") senão escreval("Menor")
+        </div>
+        <label><input type="radio" name="q2" value="a" /> Maior</label><br />
+        <label><input type="radio" name="q2" value="b" /> Menor</label><br />
+        <label><input type="radio" name="q2" value="c" /> Erro</label><br />
+        <label><input type="radio" name="q2" value="d" /> Nada</label>
+      </div>
+
+      <!-- Questão 3 -->
+      <div class="questao">
+        <p><strong>3. Qual desses NÃO é um operador lógico?     </strong></p>
+        <label><input type="radio" name="q3" value="a" /> OU    </label><br/>
+        <label><input type="radio" name="q3" value="b" /> NÃO   </label><br/>
+        <label><input type="radio" name="q3" value="c" /> ENTAO </label><br/>
+        <label><input type="radio" name="q3" value="d" /> NOR   </label>
+      </div>
+
+      <!-- Questão 4 -->
+      <div class="questao">
+        <p><strong>4. Qual desses NÃO é um operador aritmético?          </strong></p>
+        <label><input type="radio" name="q4" value="a" /> &              </label><br />
+        <label><input type="radio" name="q4" value="b" /> /              </label><br />
+        <label><input type="radio" name="q4" value="c" /> *              </label><br />
+        <label><input type="radio" name="q4" value="d" /> ^              </label>
+      </div>
+
+      <!-- Questão 5 -->
+      <div class="questao">
+        <p><strong>5. Para que serve a instrução "leia"?</strong></p>
+        <label><input type="radio" name="q5" value="a" /> Criar uma variável    </label><br />
+        <label><input type="radio" name="q5" value="b" /> Mostrar uma mensagem  </label><br />
+        <label><input type="radio" name="q5" value="c" /> Escrever um resultado </label><br />
+        <label><input type="radio" name="q5" value="d" /> Ler dados do usúario    </label>
+      </div>
+
+      <button type="button" onclick="corrigir()">Enviar Respostas</button>
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+  </main>
+
+  <script>
+    function corrigir() {
+      const respostasCorretas = {
+        q1: "b",
+        q2: "b",
+        q3: "c",
+        q4: "a",
+        q5: "d"
+      };
+
+      let pontuacao = 0;
+
+      for (let q in respostasCorretas) {
+        const selecionada = document.querySelector(`input[name="${q}"]:checked`);
+        if (selecionada && selecionada.value === respostasCorretas[q]) {
+          pontuacao++;
+        }
+      }
+
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = `Você acertou ${pontuacao} de 5. Sua nota: ${pontuacao * 2}/10`;
+    }
+  </script>
+</body>
+</html>
